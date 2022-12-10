@@ -1,0 +1,68 @@
+div.stepper {
+    /* IEではカスタムプロパティに対応していないため、IE対応する場合は修正する。 */
+    --stepper-circle-diameter: 24px;
+    --stepper-border-width: 4px;
+    --stepper-default-color: #6c757d;
+    --stepper-active-color: #007bff;
+    --stepper-completed-color: #28a745;
+    --stepper-item-font-color: #ffffff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: flex;
+    font-size: 12px;
+}
+
+div.stepper > div {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ライン */
+div.stepper > div::after {
+    z-index: 1;
+    position: absolute;
+    top: calc((var(--stepper-circle-diameter) - var(--stepper-border-width)) / 2);
+    left: 50%;
+    width: 100%;
+    border-bottom: var(--stepper-border-width) solid var(--stepper-default-color);
+    content: "";
+}
+
+/* 最終ラインを非表示 */
+div.stepper > div:last-of-type::after {
+    content: none;
+}
+
+/* ステップ（円） */
+div.stepper > div > div:first-of-type {
+    z-index: 2;
+    position: relative;
+    width: var(--stepper-circle-diameter);
+    height: var(--stepper-circle-diameter);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--stepper-default-color);
+    color: var(--stepper-item-font-color);
+}
+
+div.stepper > div.active {
+    font-weight: bold;
+}
+
+div.stepper > div.active > div:first-of-type {
+    background-color: var(--stepper-active-color);
+}
+
+div.stepper > div.completed > div:first-of-type {
+    background-color: var(--stepper-completed-color);
+}
+
+div.stepper > div.completed::after {
+    border-bottom-color: var(--stepper-completed-color);
+}

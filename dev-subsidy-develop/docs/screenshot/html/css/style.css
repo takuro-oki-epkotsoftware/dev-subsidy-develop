@@ -1,0 +1,52 @@
+body {
+    /* background-image クレジット表記 */
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url(./../image/embossed-diamond.png);
+    background-color: #ffffffb0;
+    background-blend-mode:lighten;
+    color: #343a40;
+}
+
+header {
+    background-color: #c0c0c0e0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 8rem;
+    text-align: right;
+}
+
+label.custom-label {
+    font-weight: bold;
+}
+
+.row,
+.form-row {
+    padding-bottom: 1rem;
+}
+.row > div,
+.form-row > div {
+    padding-bottom: 0.3rem;
+}
+
+.tab {
+    display: none;
+}
